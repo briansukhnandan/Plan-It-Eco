@@ -1,0 +1,28 @@
+{
+	"DB":
+	[
+		{
+		      "Comments":
+		      {
+			  "tuple1": [1, 2, "Hi"],
+			  "tuple2": [100, 200, "Bye"]
+		      }
+		},
+		{
+		      "User":
+		      {
+			  "tuple3": [2, 10, "example@gmail.com"],
+			  "tuple4": [200, 20, "example2@gmail.com"]
+		      }
+
+		},
+
+		{
+		      "Events":
+		      {
+			  "tuple5": [2, "Jacky Birthday", "02/25/1999", "18:30", "6135 Kissena Blvd, Flushing, NY", "He needs friends.", "7182120598", 1, 1],
+			  "tuple6": [200, "Bola Birthday", "03/21/1999", "17:30", "6135 Kissena Blvd, Flushing, NY", "He needs friends.", "3474774782", 1, 1]
+		      }
+		}
+	]
+}
