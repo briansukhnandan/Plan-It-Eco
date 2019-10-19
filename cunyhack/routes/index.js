@@ -7,4 +7,10 @@ router.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname + '/page_structure/index.html'));
 });
 
+router.get('info', function(req, res, next) {
+
+  res.sendFile(path.join(__dirname + '/page_structure/info.html'));
+
+});
+
 module.exports = router;
