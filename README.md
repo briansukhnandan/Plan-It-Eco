@@ -17,3 +17,6 @@ Pushing to master branch (DO NOT DO WITHOUT PERMISSION OF ENTIRE GROUP)
 - git pull //run a git pull
 - git checkout master //switch to master branch
 - git merge your-name //merge your branch with master
+
+To run the project, make sure you have NodeJS 10.16.3 LTS.
+Navigate to cunyhack/ and run 'npm start' in a terminal
