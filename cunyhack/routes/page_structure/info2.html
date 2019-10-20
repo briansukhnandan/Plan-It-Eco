@@ -1,6 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
+
+    <!--New-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
   </head>
   <body onload="loadInfo()">
     <br>
@@ -19,8 +23,13 @@
         <br>
         <button type="button" onclick="">Interested</button>
         <button type="button" onclick="">Going</button>
-        <table id="comment"></table>
         <button type="button" onclick="window.location.href='index2.html'">Go Back</button>
+
+        <!--New-->
+        <br>
+        <button type="button" onclick="comment()">Add Comment</button>
+        <table id="comment"></table>
+
       </center>
     </div>
     <script>
@@ -35,6 +44,14 @@
         document.getElementById("phone").innerHTML = array[4];
         document.getElementById("description").innerHTML = array[5];
       }
+
+      <!--New-->
+      function comment(){
+        var text = prompt("Enter your comments:" );
+        var str = "<tr><td>" + text + "</td></tr>";
+        $("#comment").append(str);
+      }
+
     </script>
   </body>
 </html>
