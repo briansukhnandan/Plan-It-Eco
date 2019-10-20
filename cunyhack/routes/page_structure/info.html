@@ -6,25 +6,34 @@
     <br>
     <br>
     <div class="row justify-content-center">
-      <p id="name"></p>
-      <p id="image"></p>
-      <p id="name"></p>
-      <p id="pic"></p<li class="contactUs"><a href="#contactus.html">Contact Us</a></li>>
-      <p id="place"></p>
-      <p id="time"></p>
-      <p id="description"></p>
-      <p id="phone"></p>
-      <br>
-      <button type="button" onclick="">Interested</button>
-      <button type="button" onclick="">Going</button>
-      <p></p>
-      <button type="button" onclick="window.location.href='/'">Go Back</button>
+      <center>
+        <p id="image"></p>
+        <p id="name"></p>
+        <p id="pic"></p>
+        <p id="place"></p>
+        <p id="date"></p>
+        <p id="time"></p>
+        <p id="description"></p>
+        <p id="phone"></p>
+        <br>
+        <button type="button" onclick="">Interested</button>
+        <button type="button" onclick="">Going</button>
+        <table id="comment"></table>
+        <button type="button" onclick="window.location.href='index2.html'">Go Back</button>
+      </center>
     </div>
+    <script>
+      function loadInfo(){
+        var str = sessionStorage.getItem("data");
+        var array = str.split("\\\\//");
+        document.getElementById("image")
+        document.getElementById("name").innerHTML = array[0];
+        document.getElementById("place").innerHTML = array[1];
+        document.getElementById("date").innerHTML = array[2];
+        document.getElementById("time").innerHTML = array[3];
+        document.getElementById("phone").innerHTML = array[4];
+        document.getElementById("description").innerHTML = array[5];
+      }
+    </script>
   </body>
-  <script src="function.js"></script>
-      <table id="comment"></table>
-      <button type="button" onclick="window.location.href='/'">Go Back</button>
-    </div>
-  </body>
-  <script src="javascripts/function.js"></script>
 </html>

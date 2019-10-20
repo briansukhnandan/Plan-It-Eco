@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+  </head>
+  <body onload="loadInfo()">
+    <br>
+    <br>
+    <div class="row justify-content-center">
+      <center>
+        <p id="name"></p>
+        <p id="pic"></p>
+        <a href="https://goo.gl/maps/wfEV8Uhrnhif46e38">
+        <p id="place"></p>
+        </a>
+        <p id="date"></p>
+        <p id="time"></p>
+        <p id="description"></p>
+        <p id="phone"></p>
+        <br>
+        <button type="button" onclick="">Interested</button>
+        <button type="button" onclick="">Going</button>
+        <table id="comment"></table>
+        <button type="button" onclick="window.location.href='index2.html'">Go Back</button>
+      </center>
+    </div>
+    <script>
+      function loadInfo(){
+        var str = sessionStorage.getItem("data");
+        var array = str.split("\\\\//");
+        document.getElementById("pic").innerHTML = "<img src='http://www.centralparknyc.org/assets/images/blog/trash-management-3.jpg'>"
+        document.getElementById("name").innerHTML = array[0];
+        document.getElementById("place").innerHTML = array[1];
+        document.getElementById("date").innerHTML = array[2];
+        document.getElementById("time").innerHTML = array[3];
+        document.getElementById("phone").innerHTML = array[4];
+        document.getElementById("description").innerHTML = array[5];
+      }
+    </script>
+  </body>
+</html>

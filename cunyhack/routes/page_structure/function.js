@@ -1,79 +1,123 @@
-<<<<<<< HEAD
-=======
-// document.getElementById("myFile").onchange = function() {
-//   var file = this.files[0];
-//   var reader = new FileReader();
-//   var x = document.getElementById("myFile").value;
-//   reader.onload = function(progressEvent) {
-function loadEvent() {
-//  $(function() {
-
-
-  var people = [];
-
-  $.getJSON('testData.json', function(data) {
-    log(data)
-      $.each(data.DB, function(i, f) {
-         var tblRow = "<tr>" + "<td>" + f.firstName + "</td>" +
-          "<td>" + f.lastName + "</td>" + "<td>" + f.job + "</td>" + "<td>" + f.roll + "</td>" + "</tr>"
-          $(tblRow).appendTo("#userdata tbody");
-    });
-
-  });
-
-//});
-  //   var obj = JSON.parse(testData);
-  //   var detail = obj.DB[2].Events.tuple5;
-  //   var str = '';
-  //   str += '<tr>' + '<td>' + '<button type="button" onclick="">' + detail[1] + '<br>'
-  //      + detail[2] + '<br>' + detail[5] + '</button>' + '</td>' + '</tr>';
-  //   detail = obj.DB[2].Events.tuple6;
-  //   str += '<tr>' + '<td>' + '<button type="button" onclick="">' + detail[1] + '<br>'
-  //     + detail[2] + '<br>' + detail[5] + '</button>' + '</td>' + '</tr>';
-  //   $("#event").append(str);
-  // };
-  // reader.readAsText(file);
-}
-
->>>>>>> wade
 function sumbitForm(){
-  var name = document.getElementById("name").value;
-  var place = document.getElementById("place").value;
-  var time = document.getElementById("time").value;
-  var description = document.getElementById("description").value;
-  var phone = document.getElementById("phone").value;
-  if(name.length == 0 || place.length == 0 || time.length == 0 || description.length == 0 || phone.length == 0){
-    alert("You must complete all the field");
-<<<<<<< HEAD
+  do {
+    var name = prompt("Name the event: ");
+  } while(name.length == 0);
+  do {
+    var address = prompt("Enter the address(Street,City,State): ");
+  } while(address.length == 0);
+  do {
+    var date = prompt("Enter the date(MM/DD): ");
+  } while(date.length == 0 || formatDate(date));
+  date = addZero(date);
+  do {
+    var time = prompt("Enter the time(HH:MM based on 24 hours): ");
+  } while(time.length == 0 || formatTime(time));
+  time = addZero(time);
+  time = reformTime(time);
+  do {
+  var description = prompt("Give a description(optional): ");
+  } while(description.length == 0);
+  do {
+    var phone = prompt("Enter your phone number: ");
+  } while(phone.length == 0);
+  var str = "";
+  str = "<tr><td><button id='select' value='" + name + "\\\\//"
+      + address + "\\\\//"+ date + "\\\\//" + time + "\\\\//" + phone + "\\\\//"
+      + description + "' onclick='info(value)'><b>" + name + "</b><br>" + date + "<br>" +
+      description + "</button></td></tr>";
+  $("#event").append(str);
+}
+
+function formatDate(date) {
+  if(date.indexOf("/") == -1) {
+    return true;
   }
-  else{
-    //Update database
-    var str = "<tr><td><button id='select' value='" + name + "\\\\//"
-      + place + "\\\\//"+ time + "\\\\//" + description + "\\\\//" + phone + "\\\\//"
-      + "' onclick='info(value)'><b>" + name + "</b><br>" + place + "<br>" +
-      time + "   " + description + "</button></td></tr>";
-    $("#event").append(str);
-=======
+  if(date.length < 3 || date.length > 5){
+    return true;
+  }
+  var num = date.split("/");
+  if(num[0] > 12 || num[0] < 1){
+    return true;
+  }
+  if(num[1] < 1 || ((num[0] == 2 && num[1] > 29) || ((num[0] == 4 || num[0] == 6 || num[0] == 8 ||
+    num[0] == 9 || num[0] == 11) && num[1] > 30) || ((num[0] == 1 || num[0] == 3 || num[0] == 5 ||
+    num[0] == 7 || num[0] == 10 || num[0] == 12) && num[1] > 31))){
+    return true;
+  }
+  return false;
+}
+
+function formatTime(time) {
+  if(time.indexOf(":") == -1) {
+    return true;
+  }
+  if(time.length < 3 || time.length > 5){
+    return true;
+  }
+  var num = time.split(":");
+  if(num[0] > 24 || num[0] < 0){
+    return true;
+  }
+  if(num[0] > 59 || num[0] < 0){
+    return true;
+  }
+  return false;
+}
+
+function reformTime(time) {
+  var nTime = "";
+  var array = time.split(":");
+  if(array[0] == 0) {
+    nTime = "12:" + array[1] + "am";
+  }
+  else if(array[0] < 12) {
+    nTime = array[0] + ":" + array[1] + "am";
+  }
+  else if(array[0] == 12) {
+    nTime = array[0] + ":" + array[1] + "pm";
+  }
+  else {
+    nTime = (array[0] - 12) + ":" + array[1] + "pm";
+  }
+  return nTime;
+}
+
+function addZero(num) {
+  var form = "";
+  if(num.indexOf("/") == -1){
+    var array = num.split(":");
+    if(array[0] < 10){
+      form = "0" + array[0] + ":";
     }
-  else{
-    //Update database
-      var str = "<tr><td><button id='select' value='" + name + "\\\\//"
-        + place + "\\\\//"+ time + "\\\\//" + description + "\\\\//" + phone + "\\\\//"
-        + "' onclick='info(value)'><b>" + name + "</b><br>" + place + "<br>" +
-        time + "   " + description + "</button></td></tr>";
-      $("#event").append(str);
->>>>>>> wade
-    document.location.href="index.html";
+    else {
+      form = array[0] + ":";
+    }
+    if(array[1] < 10){
+      form += "0" + array[1];
+    }
+    else {
+      form += array[1];
+    }
   }
+  else {
+    var array = num.split("/");
+    if(array[0] < 10){
+      form = "0" + array[0] + "/";
+    }
+    else {
+      form = array[0] + "/";
+    }
+    if(array[1] < 10){
+      form += "0" + array[1];
+    }
+    else {
+      form += array[1];
+    }
+  }
+  return form;
 }
 
-<<<<<<< HEAD
-function loadEvent() {
-  //Load database
-}
-
-=======
->>>>>>> wade
-function loadInfo() {
-  //Load database
+function info(info) {
+  sessionStorage.setItem("data", info);
+  window.location.href = "info.html";
 }
