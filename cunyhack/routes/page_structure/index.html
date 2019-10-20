@@ -2,17 +2,123 @@
 <html lang="en">
   <head>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Home Page</title>
   </head>
+  <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header" style="float:left;">
+            <a class="navbar-brand" href="#">
+                <div style="color:white;">
+                    Plan-It Eco
+                </div>
+            </a>
+          </div>
+          <div style="float:right;">
+            <ul class="nav navbar-nav">
+
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="./index.html">Join the Movement!</a></li>
+                <li><a href="mailto:liwade13@gmail.com">Contact</a></li>
+            </ul>
+            </div>
+        </div>
+      </nav>
   <body>
+    <div class="masthead">
+      <p>test</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <center><img src="../../public/images/logo.jpg" style="width:230px;height:280px;">
     <div class="row justify-content-center">
-      <center><h1>Events</h1>
+      <center><h1>Current Cleanup Events</h1>
       <button type="button" onclick="sumbitForm()">Add Event</button>
       <br>
       <br>
       <table id="event"></table></center>
     </div>
+    <br>
+    <br>
+    <br>
+
+        <div class="container" style="padding-left:75px; padding-bottom:50px; padding-top:50px;">
+
+                <div class="col-md-1">
+                        
+                </div>
+
+                <div data-aos="fade-up-right">
+                    <div class="col-md-4">
+                        
+                        <img class="img-responsive" src="../../public/images/park.jpeg" style="width:370px;height:200px;">
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div style="color:white;">
+                    </div>
+                </div>
+                
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+
+                <div class="col-md-7">
+                        
+                </div>
+
+                <div data-aos="fade-up-left">
+                    <div class="col-md-4">
+                        
+                        <img class="img-responsive" src="../../public/images/picking-up-trash.png" style="width:370px;height:200px;">
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+
+                </div>
+
+
+
+                    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init( {
+
+                mirror: true, //Animate out when scrolling past it.
+
+            });
+        </script>
+        </div>
+
   </body>
   <script src="function.js"></script>
+  <div style="background-color: #030303; color: white; padding-top: 50px; padding-bottom: 20px; text-align:center;">
+
+    <h5>Help clean up before it's too late!</h5>
+
+    <br>
+
+    <p>
+        <br>
+        <br>planiteco@gmail.com
+        <br>patreon.com/planiteco
+    </p>
+
+    <br>
+
+    </div>
+      <div style="background-color:black; color:white;">
+        © 2019, All rights reserved. 
+    </div>
 </html>

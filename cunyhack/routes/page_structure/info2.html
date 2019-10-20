@@ -1,8 +1,35 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
+
+    <!--New-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
   </head>
+  <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header" style="float:left;">
+          <a class="navbar-brand" href="#">
+              <div style="color:white;">
+                  Plan-It Eco
+              </div>
+          </a>
+        </div>
+        <div style="float:right;">
+          <ul class="nav navbar-nav">
+
+              <li><a href="./index.html">Home</a></li>
+              <li class="active"><a href="#">Join the Movement!</a></li>
+              <li><a href="mailto:liwade13@gmail.com">Contact</a></li>
+          </ul>
+          </div>
+      </div>
+    </nav>
   <body onload="loadInfo()">
+    <br>
+    <br>
     <br>
     <br>
     <div class="row justify-content-center">
@@ -17,10 +44,16 @@
         <p id="description"></p>
         <p id="phone"></p>
         <br>
-        <button type="button" onclick="">Interested</button>
-        <button type="button" onclick="">Going</button>
+        <button type="button" class="btn btn-info">Interested</button>
+        <button type="button" class="btn btn-info">Going</button>
+        <a class="btn btn-info" href="./index2.html" role="button">Go Back</a>
+
+        <!--New-->
+        <br>
+        <br>
+        <button type="button" onclick="comment()">Add Comment</button>
         <table id="comment"></table>
-        <button type="button" onclick="window.location.href='index2.html'">Go Back</button>
+
       </center>
     </div>
     <script>
@@ -35,6 +68,38 @@
         document.getElementById("phone").innerHTML = array[4];
         document.getElementById("description").innerHTML = array[5];
       }
+
+      <!--New-->
+      function comment(){
+        var text = prompt("Enter your comments:" );
+        var str = "<tr><td>" + text + "</td></tr>";
+        $("#comment").append(str);
+      }
+
     </script>
+    <br>
+    <br>
+    <br>
+    <div style="background-color: #030303; color: white; padding-top: 50px; padding-bottom: 20px; text-align:center;">
+
+        <h5>Help clean up before it's too late!</h5>
+
+        <br>
+
+        <p>
+            <br>
+            <br>planiteco@gmail.com
+            <br>patreon.com/planiteco
+        </p>
+
+        <br>
+
+        <a href="#"><div class="uparrow bounce">
+            <div class="whitebar" style="font-size:32px;">
+            <i class="fa fa-angle-up"></i>
+            </div>
+        </div>
+
+    </div>
   </body>
 </html>
