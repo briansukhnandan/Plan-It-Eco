@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/cunyhack/public/stylesheets/style.css"
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Home Page</title>
   </head>
@@ -102,6 +103,12 @@
         </div>
 
   </body>
+  <script>
+    function info(info) {
+      sessionStorage.setItem("data", info);
+      window.location.href = "info.html";
+    }
+  </script>
   <script src="function.js"></script>
   <div style="background-color: #030303; color: white; padding-top: 50px; padding-bottom: 20px; text-align:center;">
 
