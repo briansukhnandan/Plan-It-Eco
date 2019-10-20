@@ -7,10 +7,11 @@
     <br>
     <div class="row justify-content-center">
       <center>
-        <p id="image"></p>
         <p id="name"></p>
         <p id="pic"></p>
+        <a href="https://goo.gl/maps/wfEV8Uhrnhif46e38">
         <p id="place"></p>
+        </a>
         <p id="date"></p>
         <p id="time"></p>
         <p id="description"></p>
@@ -26,7 +27,7 @@
       function loadInfo(){
         var str = sessionStorage.getItem("data");
         var array = str.split("\\\\//");
-        document.getElementById("image")
+        document.getElementById("pic").innerHTML = "<img src='http://www.centralparknyc.org/assets/images/blog/trash-management-3.jpg'>"
         document.getElementById("name").innerHTML = array[0];
         document.getElementById("place").innerHTML = array[1];
         document.getElementById("date").innerHTML = array[2];
